@@ -1,0 +1,10 @@
+//Alternativa 1
+
+initial 
+begin  
+clock = 1'b0; 
+repeat (30)  
+l#10 clock = ~ clock; 
+end 
+	
+	
