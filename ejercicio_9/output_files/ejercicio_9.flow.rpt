@@ -1,5 +1,5 @@
 Flow report for ejercicio_9
-Tue Oct 27 09:14:22 2026
+Thu Oct 29 17:43:26 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Tue Oct 27 09:14:22 2026      ;
+; Flow Status                     ; Successful - Thu Oct 29 17:43:26 2026      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; ejercicio_9                                ;
 ; Top-level Entity Name           ; ejercicio_9                                ;
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/27/2026 09:13:56 ;
+; Start date & time ; 10/29/2026 17:43:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ejercicio_9         ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 154530155808002.179311043623436 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 154530155808002.179331378526948 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
@@ -96,11 +96,11 @@ applicable agreement for further details.
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4707 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:12     ; 2.3                     ; 6091 MB             ; 00:00:22                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 4729 MB             ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4952 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:10     ; 3.5                     ; 6096 MB             ; 00:00:16                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4729 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4938 MB             ; 00:00:03                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4612 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:30                           ;
+; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:24                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

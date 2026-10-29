@@ -1,5 +1,5 @@
 |ejercicio_7
-oQ << D_FF:JK1.port0
+oQ <= D_FF:JK1.port0
 iJ => JK.IN1
 iK => JK.IN1
 iCLK => iCLK.IN1
