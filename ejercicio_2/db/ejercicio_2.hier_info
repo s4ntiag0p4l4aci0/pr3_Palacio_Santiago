@@ -1,0 +1,4 @@
+|ejercicio_2
+clock <= clock.DB_MAX_OUTPUT_PORT_TYPE
+
+

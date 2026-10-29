@@ -1,0 +1,13 @@
+module ejercicio_2(
+    output reg clock
+);
+
+    initial begin 
+        clock = 1'b0; 
+        #300; // Nota: en diseño sintetizable para placa real esto se ignora, pero para simulación corre perfecto
+    end 
+
+    always 
+        #10 clock = ~clock;
+
+endmodule
