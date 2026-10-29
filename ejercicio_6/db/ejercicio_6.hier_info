@@ -1,5 +1,5 @@
 |ejercicio_6
-oQ << D_FF:D1.port0
+oQ <= D_FF:D1.Q
 iT => DT.IN1
 iCLK => iCLK.IN1
 iRST => iRST.IN1
