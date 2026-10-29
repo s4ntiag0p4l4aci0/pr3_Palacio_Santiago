@@ -1,9 +1,16 @@
-//Flip-flop D con restablecimiento asincrónico. 
-module ejercicio_5(oQ, iD, iCLK, iRST); 
-	output reg oQ; 
-	input iD,iCLK,iRST; 
+module ejercicio_5 (
+    output reg oQ,
+    input      iD,
+    input      iCLK,
+    input      iRST
+);
 
-	always @(posedge iCLK or negedge iRST) 
-			if (~iRST) oQ = 1'b0;			//Igual a: if (RST == 0) 
-			else oQ = iD; 
-endmodule 
+    always @(posedge iCLK or posedge iRST) begin
+        if (iRST) begin
+            oQ <= 1'b0; // Si el reset está en 1, la salida se fuerza a 0 inmediatamente
+        end else begin
+            oQ <= iD;   // Operación normal del Flip-Flop D
+        end
+    end
+
+endmodule
