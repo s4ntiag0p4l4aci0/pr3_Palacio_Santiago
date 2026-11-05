@@ -57,11 +57,11 @@ set_location_assignment PIN_AA2 -to oA[0]
 set_location_assignment PIN_AA1 -to oA[1]
 set_location_assignment PIN_W2 -to oA[2]
 set_location_assignment PIN_Y3 -to oA[3]
-set_location_assignment PIN_M9 -to iCLK
+set_location_assignment PIN_U7 -to iCLK
 set_location_assignment PIN_T12 -to iPin[3]
 set_location_assignment PIN_T13 -to iPin[2]
-set_location_assignment PIN_U13 -to iPin[1]
-set_location_assignment PIN_V13 -to iPin[0]
+set_location_assignment PIN_V13 -to iPin[1]
+set_location_assignment PIN_U13 -to iPin[0]
 set_location_assignment PIN_AB12 -to is0
 set_location_assignment PIN_AB13 -to is1
 set_location_assignment PIN_AB15 -to ilfin

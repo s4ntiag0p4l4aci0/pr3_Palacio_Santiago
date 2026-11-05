@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for ejercicio_13
-Fri Oct 30 21:43:02 2026
+Thu Nov 05 17:06:48 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -132,13 +132,13 @@ applicable agreement for further details.
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                                         ;
-+------------+-----------------+------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note                                           ;
-+------------+-----------------+------------+------------------------------------------------+
-; 812.35 MHz ; 650.2 MHz       ; iCLK       ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+------------+------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                              ;
++-----------+-----------------+------------+------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                 ;
++-----------+-----------------+------------+------------------------------------------------------+
+; 888.1 MHz ; 594.53 MHz      ; iCLK       ; limit due to low minimum pulse width violation (tcl) ;
++-----------+-----------------+------------+------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -153,7 +153,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; iCLK  ; -0.231 ; -0.434             ;
+; iCLK  ; -0.126 ; -0.390             ;
 +-------+--------+--------------------+
 
 
@@ -162,7 +162,7 @@ HTML report is unavailable in plain text report export.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; iCLK  ; 0.252 ; 0.000              ;
+; iCLK  ; 0.241 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -183,25 +183,25 @@ No paths to report.
 +-------+--------+----------------------------------+
 ; Clock ; Slack  ; End Point TNS                    ;
 +-------+--------+----------------------------------+
-; iCLK  ; -0.538 ; -3.128                           ;
+; iCLK  ; -0.538 ; -3.498                           ;
 +-------+--------+----------------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.484 ; 0.809 ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; 0.172 ; 0.437 ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; 0.450 ; 0.748 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.484 ; 0.809 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; 0.147 ; 0.448 ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; 0.388 ; 0.629 ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; 0.290 ; 0.515 ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 1.276 ; 1.517 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.804 ; 0.940 ; Rise       ; iCLK            ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; iPin[*]   ; iCLK       ; -0.712 ; -0.222 ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; -0.904 ; -0.463 ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; -1.375 ; -1.197 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; -0.712 ; -0.222 ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; -1.346 ; -0.974 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; -0.897 ; -0.356 ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; -0.997 ; -0.492 ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; -0.038 ; 0.354  ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; -0.149 ; 0.149  ; Rise       ; iCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
 +-----------------------------------------------------------------------+
@@ -209,15 +209,15 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.835 ; 0.584 ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; 0.829 ; 0.584 ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; 0.546 ; 0.262 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.525 ; 0.233 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; 0.835 ; 0.533 ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; 0.603 ; 0.461 ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; 0.678 ; 0.535 ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 0.369 ; 0.173 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.508 ; 0.348 ; Rise       ; iCLK            ;
+; iPin[*]   ; iCLK       ; 4.554 ; 4.455 ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; 4.155 ; 3.917 ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; 4.534 ; 4.455 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; 3.980 ; 3.707 ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; 4.554 ; 4.313 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; 4.177 ; 3.756 ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; 4.243 ; 3.958 ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; 4.237 ; 3.994 ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; 4.182 ; 3.933 ; Rise       ; iCLK            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -226,25 +226,25 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; oA[*]     ; iCLK       ; 10.185 ; 10.855 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 9.449  ; 9.782  ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 9.530  ; 9.895  ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 10.185 ; 10.855 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 9.505  ; 9.924  ; Rise       ; iCLK            ;
+; oA[*]     ; iCLK       ; 14.094 ; 14.824 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 13.241 ; 13.522 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 14.094 ; 14.824 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 13.002 ; 13.247 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 13.030 ; 13.291 ; Rise       ; iCLK            ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; oA[*]     ; iCLK       ; 8.721 ; 8.943 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 8.721 ; 8.943 ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 8.789 ; 9.039 ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 9.361 ; 9.849 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 8.749 ; 9.045 ; Rise       ; iCLK            ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; oA[*]     ; iCLK       ; 10.204 ; 10.393 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 10.444 ; 10.674 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 11.148 ; 11.663 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 10.204 ; 10.393 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 10.230 ; 10.435 ; Rise       ; iCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
 ----------------------------------------------
@@ -253,13 +253,13 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                                          ;
-+------------+-----------------+------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note                                           ;
-+------------+-----------------+------------+------------------------------------------------+
-; 789.27 MHz ; 650.2 MHz       ; iCLK       ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+------------+------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                ;
++------------+-----------------+------------+------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                 ;
++------------+-----------------+------------+------------------------------------------------------+
+; 918.27 MHz ; 649.35 MHz      ; iCLK       ; limit due to low minimum pulse width violation (tcl) ;
++------------+-----------------+------------+------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -268,7 +268,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; iCLK  ; -0.267 ; -0.513            ;
+; iCLK  ; -0.089 ; -0.238            ;
 +-------+--------+-------------------+
 
 
@@ -277,7 +277,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; iCLK  ; 0.243 ; 0.000             ;
+; iCLK  ; 0.231 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -298,25 +298,25 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; iCLK  ; -0.538 ; -3.154                          ;
+; iCLK  ; -0.538 ; -3.220                          ;
 +-------+--------+---------------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.418 ; 0.740 ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; 0.050 ; 0.318 ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; 0.343 ; 0.636 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.418 ; 0.740 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; 0.017 ; 0.304 ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; 0.298 ; 0.582 ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; 0.209 ; 0.468 ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 1.113 ; 1.403 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.599 ; 0.754 ; Rise       ; iCLK            ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; iPin[*]   ; iCLK       ; -0.621 ; -0.094 ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; -0.859 ; -0.358 ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; -1.412 ; -1.167 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; -0.621 ; -0.094 ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; -1.379 ; -0.946 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; -0.883 ; -0.319 ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; -0.960 ; -0.399 ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; -0.139 ; 0.337  ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; -0.300 ; 0.058  ; Rise       ; iCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
 +-----------------------------------------------------------------------+
@@ -324,15 +324,15 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.962 ; 0.702 ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; 0.947 ; 0.702 ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; 0.648 ; 0.370 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.585 ; 0.300 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; 0.962 ; 0.678 ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; 0.692 ; 0.511 ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; 0.758 ; 0.595 ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 0.430 ; 0.204 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.553 ; 0.387 ; Rise       ; iCLK            ;
+; iPin[*]   ; iCLK       ; 4.545 ; 4.405 ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; 4.075 ; 3.777 ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; 4.541 ; 4.405 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; 3.856 ; 3.550 ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; 4.545 ; 4.249 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; 4.124 ; 3.680 ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; 4.175 ; 3.838 ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; 4.164 ; 3.898 ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; 4.130 ; 3.837 ; Rise       ; iCLK            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -341,25 +341,25 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; oA[*]     ; iCLK       ; 10.029 ; 10.786 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 9.248  ; 9.663  ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 9.320  ; 9.784  ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 10.029 ; 10.786 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 9.372  ; 9.856  ; Rise       ; iCLK            ;
+; oA[*]     ; iCLK       ; 13.846 ; 14.652 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 12.952 ; 13.286 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 13.846 ; 14.652 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 12.713 ; 12.984 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 12.723 ; 13.024 ; Rise       ; iCLK            ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; oA[*]     ; iCLK       ; 8.534 ; 8.849 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 8.534 ; 8.849 ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 8.595 ; 8.951 ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 9.220 ; 9.815 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 8.640 ; 9.002 ; Rise       ; iCLK            ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; oA[*]     ; iCLK       ; 9.961  ; 10.181 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 10.201 ; 10.489 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 10.951 ; 11.550 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 9.961  ; 10.181 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 9.971  ; 10.218 ; Rise       ; iCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
 ---------------------------------------------
@@ -373,7 +373,7 @@ No synchronizer chains to report.
 +-------+-------+---------------------+
 ; Clock ; Slack ; End Point TNS       ;
 +-------+-------+---------------------+
-; iCLK  ; 0.404 ; 0.000               ;
+; iCLK  ; 0.403 ; 0.000               ;
 +-------+-------+---------------------+
 
 
@@ -382,7 +382,7 @@ No synchronizer chains to report.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; iCLK  ; 0.138 ; 0.000              ;
+; iCLK  ; 0.127 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -403,42 +403,42 @@ No paths to report.
 +-------+--------+----------------------------------+
 ; Clock ; Slack  ; End Point TNS                    ;
 +-------+--------+----------------------------------+
-; iCLK  ; -0.098 ; -0.388                           ;
+; iCLK  ; -0.314 ; -1.403                           ;
 +-------+--------+----------------------------------+
 
 
-+------------------------------------------------------------------------+
-; Setup Times                                                            ;
-+-----------+------------+--------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+-------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.029  ; 0.583 ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; -0.166 ; 0.346 ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; -0.021 ; 0.521 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.029  ; 0.583 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; -0.171 ; 0.342 ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; -0.073 ; 0.444 ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; -0.125 ; 0.387 ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 0.295  ; 0.864 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.071  ; 0.584 ; Rise       ; iCLK            ;
-+-----------+------------+--------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; iPin[*]   ; iCLK       ; -0.466 ; 0.259  ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; -0.652 ; 0.071  ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; -0.980 ; -0.451 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; -0.466 ; 0.259  ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; -0.812 ; -0.111 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; -0.546 ; 0.188  ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; -0.693 ; 0.053  ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; -0.383 ; 0.348  ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; -0.396 ; 0.311  ; Rise       ; iCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
-+------------------------------------------------------------------------+
-; Hold Times                                                             ;
-+-----------+------------+-------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+--------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.613 ; 0.118  ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; 0.613 ; 0.118  ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; 0.466 ; -0.063 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.420 ; -0.110 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; 0.611 ; 0.097  ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; 0.509 ; 0.044  ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; 0.547 ; 0.076  ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 0.395 ; -0.115 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.463 ; -0.024 ; Rise       ; iCLK            ;
-+-----------+------------+-------+--------+------------+-----------------+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; iPin[*]   ; iCLK       ; 2.362 ; 1.876 ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; 2.093 ; 1.490 ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; 2.362 ; 1.876 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; 1.925 ; 1.324 ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; 2.242 ; 1.632 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; 2.012 ; 1.358 ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; 2.128 ; 1.508 ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; 2.181 ; 1.597 ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; 2.141 ; 1.538 ; Rise       ; iCLK            ;
++-----------+------------+-------+-------+------------+-----------------+
 
 
 +-----------------------------------------------------------------------+
@@ -446,11 +446,11 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; oA[*]     ; iCLK       ; 5.699 ; 6.381 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 5.174 ; 5.572 ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 5.210 ; 5.643 ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 5.699 ; 6.381 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 5.285 ; 5.767 ; Rise       ; iCLK            ;
+; oA[*]     ; iCLK       ; 7.568 ; 8.256 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 6.933 ; 7.253 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 7.568 ; 8.256 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 6.819 ; 7.096 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 6.775 ; 7.092 ; Rise       ; iCLK            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -459,11 +459,11 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; oA[*]     ; iCLK       ; 4.865 ; 5.196 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 4.865 ; 5.196 ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 4.901 ; 5.263 ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 5.338 ; 5.904 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 4.966 ; 5.375 ; Rise       ; iCLK            ;
+; oA[*]     ; iCLK       ; 5.576 ; 5.857 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 5.731 ; 6.018 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 6.273 ; 6.814 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 5.615 ; 5.857 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 5.576 ; 5.861 ; Rise       ; iCLK            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -478,7 +478,7 @@ No synchronizer chains to report.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; iCLK  ; 0.427 ; 0.000              ;
+; iCLK  ; 0.446 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -487,7 +487,7 @@ No synchronizer chains to report.
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; iCLK  ; 0.124 ; 0.000             ;
+; iCLK  ; 0.114 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -508,42 +508,42 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; iCLK  ; -0.099 ; -0.392                          ;
+; iCLK  ; -0.300 ; -1.332                          ;
 +-------+--------+---------------------------------+
 
 
-+------------------------------------------------------------------------+
-; Setup Times                                                            ;
-+-----------+------------+--------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+-------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.026  ; 0.569 ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; -0.190 ; 0.324 ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; -0.045 ; 0.490 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.026  ; 0.569 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; -0.195 ; 0.316 ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; -0.063 ; 0.456 ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; -0.110 ; 0.401 ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 0.274  ; 0.840 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.045  ; 0.556 ; Rise       ; iCLK            ;
-+-----------+------------+--------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; iPin[*]   ; iCLK       ; -0.445 ; 0.259  ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; -0.640 ; 0.064  ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; -1.004 ; -0.453 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; -0.445 ; 0.259  ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; -0.815 ; -0.131 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; -0.530 ; 0.173  ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; -0.670 ; 0.048  ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; -0.421 ; 0.294  ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; -0.452 ; 0.239  ; Rise       ; iCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
-+------------------------------------------------------------------------+
-; Hold Times                                                             ;
-+-----------+------------+-------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+--------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.626 ; 0.130  ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; 0.626 ; 0.130  ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; 0.478 ; -0.046 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.413 ; -0.106 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; 0.623 ; 0.115  ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; 0.491 ; 0.019  ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; 0.524 ; 0.056  ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 0.373 ; -0.135 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.438 ; -0.043 ; Rise       ; iCLK            ;
-+-----------+------------+-------+--------+------------+-----------------+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; iPin[*]   ; iCLK       ; 2.366 ; 1.861 ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; 2.063 ; 1.463 ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; 2.366 ; 1.861 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; 1.886 ; 1.298 ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; 2.227 ; 1.626 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; 1.978 ; 1.346 ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; 2.087 ; 1.478 ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; 2.144 ; 1.572 ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; 2.112 ; 1.515 ; Rise       ; iCLK            ;
++-----------+------------+-------+-------+------------+-----------------+
 
 
 +-----------------------------------------------------------------------+
@@ -551,11 +551,11 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; oA[*]     ; iCLK       ; 5.400 ; 5.982 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 4.886 ; 5.220 ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 4.903 ; 5.275 ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 5.400 ; 5.982 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 4.996 ; 5.422 ; Rise       ; iCLK            ;
+; oA[*]     ; iCLK       ; 7.289 ; 7.852 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 6.635 ; 6.890 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 7.289 ; 7.852 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 6.495 ; 6.734 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 6.438 ; 6.727 ; Rise       ; iCLK            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -564,11 +564,11 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; oA[*]     ; iCLK       ; 4.593 ; 4.869 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 4.593 ; 4.869 ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 4.610 ; 4.919 ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 5.054 ; 5.543 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 4.689 ; 5.046 ; Rise       ; iCLK            ;
+; oA[*]     ; iCLK       ; 5.260 ; 5.517 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 5.451 ; 5.675 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 6.010 ; 6.448 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 5.310 ; 5.518 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 5.260 ; 5.517 ; Rise       ; iCLK            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -583,28 +583,28 @@ No synchronizer chains to report.
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -0.267 ; 0.124 ; N/A      ; N/A     ; -0.538              ;
-;  iCLK            ; -0.267 ; 0.124 ; N/A      ; N/A     ; -0.538              ;
-; Design-wide TNS  ; -0.513 ; 0.0   ; 0.0      ; 0.0     ; -3.154              ;
-;  iCLK            ; -0.513 ; 0.000 ; N/A      ; N/A     ; -3.154              ;
+; Worst-case Slack ; -0.126 ; 0.114 ; N/A      ; N/A     ; -0.538              ;
+;  iCLK            ; -0.126 ; 0.114 ; N/A      ; N/A     ; -0.538              ;
+; Design-wide TNS  ; -0.39  ; 0.0   ; 0.0      ; 0.0     ; -3.498              ;
+;  iCLK            ; -0.390 ; 0.000 ; N/A      ; N/A     ; -3.498              ;
 +------------------+--------+-------+----------+---------+---------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.484 ; 0.809 ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; 0.172 ; 0.437 ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; 0.450 ; 0.748 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.484 ; 0.809 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; 0.147 ; 0.448 ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; 0.388 ; 0.629 ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; 0.290 ; 0.515 ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 1.276 ; 1.517 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.804 ; 0.940 ; Rise       ; iCLK            ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; iPin[*]   ; iCLK       ; -0.445 ; 0.259  ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; -0.640 ; 0.071  ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; -0.980 ; -0.451 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; -0.445 ; 0.259  ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; -0.812 ; -0.111 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; -0.530 ; 0.188  ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; -0.670 ; 0.053  ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; -0.038 ; 0.354  ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; -0.149 ; 0.311  ; Rise       ; iCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
 +-----------------------------------------------------------------------+
@@ -612,15 +612,15 @@ No synchronizer chains to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; iPin[*]   ; iCLK       ; 0.962 ; 0.702 ; Rise       ; iCLK            ;
-;  iPin[0]  ; iCLK       ; 0.947 ; 0.702 ; Rise       ; iCLK            ;
-;  iPin[1]  ; iCLK       ; 0.648 ; 0.370 ; Rise       ; iCLK            ;
-;  iPin[2]  ; iCLK       ; 0.585 ; 0.300 ; Rise       ; iCLK            ;
-;  iPin[3]  ; iCLK       ; 0.962 ; 0.678 ; Rise       ; iCLK            ;
-; ilfin     ; iCLK       ; 0.692 ; 0.511 ; Rise       ; iCLK            ;
-; irtin     ; iCLK       ; 0.758 ; 0.595 ; Rise       ; iCLK            ;
-; is0       ; iCLK       ; 0.430 ; 0.204 ; Rise       ; iCLK            ;
-; is1       ; iCLK       ; 0.553 ; 0.387 ; Rise       ; iCLK            ;
+; iPin[*]   ; iCLK       ; 4.554 ; 4.455 ; Rise       ; iCLK            ;
+;  iPin[0]  ; iCLK       ; 4.155 ; 3.917 ; Rise       ; iCLK            ;
+;  iPin[1]  ; iCLK       ; 4.541 ; 4.455 ; Rise       ; iCLK            ;
+;  iPin[2]  ; iCLK       ; 3.980 ; 3.707 ; Rise       ; iCLK            ;
+;  iPin[3]  ; iCLK       ; 4.554 ; 4.313 ; Rise       ; iCLK            ;
+; ilfin     ; iCLK       ; 4.177 ; 3.756 ; Rise       ; iCLK            ;
+; irtin     ; iCLK       ; 4.243 ; 3.958 ; Rise       ; iCLK            ;
+; is0       ; iCLK       ; 4.237 ; 3.994 ; Rise       ; iCLK            ;
+; is1       ; iCLK       ; 4.182 ; 3.933 ; Rise       ; iCLK            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -629,11 +629,11 @@ No synchronizer chains to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; oA[*]     ; iCLK       ; 10.185 ; 10.855 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 9.449  ; 9.782  ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 9.530  ; 9.895  ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 10.185 ; 10.855 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 9.505  ; 9.924  ; Rise       ; iCLK            ;
+; oA[*]     ; iCLK       ; 14.094 ; 14.824 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 13.241 ; 13.522 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 14.094 ; 14.824 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 13.002 ; 13.247 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 13.030 ; 13.291 ; Rise       ; iCLK            ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -642,11 +642,11 @@ No synchronizer chains to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; oA[*]     ; iCLK       ; 4.593 ; 4.869 ; Rise       ; iCLK            ;
-;  oA[0]    ; iCLK       ; 4.593 ; 4.869 ; Rise       ; iCLK            ;
-;  oA[1]    ; iCLK       ; 4.610 ; 4.919 ; Rise       ; iCLK            ;
-;  oA[2]    ; iCLK       ; 5.054 ; 5.543 ; Rise       ; iCLK            ;
-;  oA[3]    ; iCLK       ; 4.689 ; 5.046 ; Rise       ; iCLK            ;
+; oA[*]     ; iCLK       ; 5.260 ; 5.517 ; Rise       ; iCLK            ;
+;  oA[0]    ; iCLK       ; 5.451 ; 5.675 ; Rise       ; iCLK            ;
+;  oA[1]    ; iCLK       ; 6.010 ; 6.448 ; Rise       ; iCLK            ;
+;  oA[2]    ; iCLK       ; 5.310 ; 5.518 ; Rise       ; iCLK            ;
+;  oA[3]    ; iCLK       ; 5.260 ; 5.517 ; Rise       ; iCLK            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -780,7 +780,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Oct 30 21:42:59 2026
+    Info: Processing started: Thu Nov 05 17:06:45 2026
 Info: Command: quartus_sta ejercicio_13 -c ejercicio_13
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 10 of the 10 physical processors detected instead.
@@ -796,83 +796,83 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.231
+Info (332146): Worst-case setup slack is -0.126
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.231              -0.434 iCLK 
-Info (332146): Worst-case hold slack is 0.252
+    Info (332119):    -0.126              -0.390 iCLK 
+Info (332146): Worst-case hold slack is 0.241
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.252               0.000 iCLK 
+    Info (332119):     0.241               0.000 iCLK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538              -3.128 iCLK 
+    Info (332119):    -0.538              -3.498 iCLK 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.267
+Info (332146): Worst-case setup slack is -0.089
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.267              -0.513 iCLK 
-Info (332146): Worst-case hold slack is 0.243
+    Info (332119):    -0.089              -0.238 iCLK 
+Info (332146): Worst-case hold slack is 0.231
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.243               0.000 iCLK 
+    Info (332119):     0.231               0.000 iCLK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538              -3.154 iCLK 
+    Info (332119):    -0.538              -3.220 iCLK 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 0.404
+Info (332146): Worst-case setup slack is 0.403
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.404               0.000 iCLK 
-Info (332146): Worst-case hold slack is 0.138
+    Info (332119):     0.403               0.000 iCLK 
+Info (332146): Worst-case hold slack is 0.127
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.138               0.000 iCLK 
+    Info (332119):     0.127               0.000 iCLK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case minimum pulse width slack is -0.098
+Info (332146): Worst-case minimum pulse width slack is -0.314
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.098              -0.388 iCLK 
+    Info (332119):    -0.314              -1.403 iCLK 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 0.427
+Info (332146): Worst-case setup slack is 0.446
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.427               0.000 iCLK 
-Info (332146): Worst-case hold slack is 0.124
+    Info (332119):     0.446               0.000 iCLK 
+Info (332146): Worst-case hold slack is 0.114
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.124               0.000 iCLK 
+    Info (332119):     0.114               0.000 iCLK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case minimum pulse width slack is -0.099
+Info (332146): Worst-case minimum pulse width slack is -0.300
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.099              -0.392 iCLK 
+    Info (332119):    -0.300              -1.332 iCLK 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4962 megabytes
-    Info: Processing ended: Fri Oct 30 21:43:02 2026
+    Info: Peak virtual memory: 4939 megabytes
+    Info: Processing ended: Thu Nov 05 17:06:48 2026
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
