@@ -1,5 +1,5 @@
 Fitter report for ejercicio_10
-Fri Oct 30 20:44:56 2026
+Wed Nov 04 19:48:49 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Fri Oct 30 20:44:56 2026      ;
+; Fitter Status                   ; Successful - Wed Nov 04 19:48:49 2026      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; ejercicio_10                               ;
 ; Top-level Entity Name           ; ejercicio_10                               ;
@@ -147,13 +147,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
-; Average used               ; 2.45        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;  18.2%      ;
-;     Processors 9-10        ;   9.1%      ;
+;     Processors 2-10        ; < 0.1%      ;
 ;     Processors 11-12       ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -250,7 +249,7 @@ The pin-out file can be found in C:/practica_3/pr3_Palacio_Santiago/ejercicio_10
 ;                                                             ;               ;       ;
 ; Virtual pins                                                ; 0             ;       ;
 ; I/O pins                                                    ; 4 / 224       ; 2 %   ;
-;     -- Clock pins                                           ; 1 / 9         ; 11 %  ;
+;     -- Clock pins                                           ; 0 / 9         ; 0 %   ;
 ;     -- Dedicated input pins                                 ; 0 / 11        ; 0 %   ;
 ;                                                             ;               ;       ;
 ; Global signals                                              ; 0             ;       ;
@@ -369,7 +368,7 @@ The pin-out file can be found in C:/practica_3/pr3_Palacio_Santiago/ejercicio_10
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
-; iCLK ; M9    ; 3B       ; 22           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
+; iCLK ; U7    ; 3A       ; 10           ; 0            ; 91           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
 ; iRST ; U13   ; 4A       ; 33           ; 0            ; 40           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
 ; ix   ; V13   ; 4A       ; 33           ; 0            ; 57           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
@@ -390,8 +389,8 @@ The pin-out file can be found in C:/practica_3/pr3_Palacio_Santiago/ejercicio_10
 ; I/O Bank ; Usage          ; VCCIO Voltage ; VREF Voltage ; VCCPD Voltage ;
 +----------+----------------+---------------+--------------+---------------+
 ; 2A       ; 1 / 16 ( 6 % ) ; 2.5V          ; --           ; 2.5V          ;
-; 3A       ; 0 / 16 ( 0 % ) ; 2.5V          ; --           ; 2.5V          ;
-; 3B       ; 1 / 32 ( 3 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 3A       ; 1 / 16 ( 6 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 3B       ; 0 / 32 ( 0 % ) ; 2.5V          ; --           ; 2.5V          ;
 ; 4A       ; 2 / 48 ( 4 % ) ; 2.5V          ; --           ; 2.5V          ;
 ; 5A       ; 0 / 16 ( 0 % ) ; 2.5V          ; --           ; 2.5V          ;
 ; 5B       ; 0 / 16 ( 0 % ) ; 2.5V          ; --           ; 2.5V          ;
@@ -699,7 +698,7 @@ The pin-out file can be found in C:/practica_3/pr3_Palacio_Santiago/ejercicio_10
 ; M6       ; 70         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; M7       ; 72         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; M8       ; 86         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; M9       ; 88         ; 3B       ; iCLK                            ; input  ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
+; M9       ; 88         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; M10      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; M11      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; M12      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -807,7 +806,7 @@ The pin-out file can be found in C:/practica_3/pr3_Palacio_Santiago/ejercicio_10
 ; U4       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; U5       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; U6       ; 67         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; U7       ; 59         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; U7       ; 59         ; 3A       ; iCLK                            ; input  ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; U8       ; 61         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U9       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; U10      ; 85         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -911,7 +910,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; oy   ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; ix   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; iCLK ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; iRST ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; iRST ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
@@ -926,7 +925,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; iCLK                ;                   ;         ;
 ;      - Prstate.S0   ; 1                 ; 0       ;
 ; iRST                ;                   ;         ;
-;      - Prstate.S0   ; 0                 ; 0       ;
+;      - Prstate.S0   ; 1                 ; 0       ;
 +---------------------+-------------------+---------+
 
 
@@ -935,7 +934,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; iCLK ; PIN_M9   ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; iCLK ; PIN_U7   ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
 ; iRST ; PIN_U13  ; 1       ; Async. clear ; no     ; --                   ; --               ; --                        ;
 +------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
@@ -959,9 +958,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Routing Resource Type        ; Usage                 ;
 +------------------------------+-----------------------+
 ; Block interconnects          ; 4 / 140,056 ( < 1 % ) ;
-; C12 interconnects            ; 1 / 6,048 ( < 1 % )   ;
-; C2 interconnects             ; 4 / 54,648 ( < 1 % )  ;
-; C4 interconnects             ; 4 / 25,920 ( < 1 % )  ;
+; C12 interconnects            ; 0 / 6,048 ( 0 % )     ;
+; C2 interconnects             ; 3 / 54,648 ( < 1 % )  ;
+; C4 interconnects             ; 5 / 25,920 ( < 1 % )  ;
 ; DQS bus muxes                ; 0 / 17 ( 0 % )        ;
 ; DQS-18 I/O buses             ; 0 / 17 ( 0 % )        ;
 ; DQS-9 I/O buses              ; 0 / 17 ( 0 % )        ;
@@ -969,10 +968,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Global clocks                ; 0 / 16 ( 0 % )        ;
 ; Local interconnects          ; 1 / 36,960 ( < 1 % )  ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )        ;
-; R14 interconnects            ; 0 / 5,984 ( 0 % )     ;
-; R14/C12 interconnect drivers ; 0 / 9,504 ( 0 % )     ;
-; R3 interconnects             ; 3 / 60,192 ( < 1 % )  ;
-; R6 interconnects             ; 9 / 127,072 ( < 1 % ) ;
+; R14 interconnects            ; 2 / 5,984 ( < 1 % )   ;
+; R14/C12 interconnect drivers ; 2 / 9,504 ( < 1 % )   ;
+; R3 interconnects             ; 1 / 60,192 ( < 1 % )  ;
+; R6 interconnects             ; 6 / 127,072 ( < 1 % ) ;
 ; Spine clocks                 ; 0 / 120 ( 0 % )       ;
 ; Wire stub REs                ; 0 / 7,344 ( 0 % )     ;
 +------------------------------+-----------------------+
@@ -1103,7 +1102,7 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1111,23 +1110,23 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X22_Y0 to location X32_Y10
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X11_Y0 to location X21_Y10
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.22 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.27 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/practica_3/pr3_Palacio_Santiago/ejercicio_10/output_files/ejercicio_10.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 6089 megabytes
-    Info: Processing ended: Fri Oct 30 20:44:56 2026
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 6090 megabytes
+    Info: Processing ended: Wed Nov 04 19:48:50 2026
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +----------------------------+

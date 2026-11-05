@@ -1,4 +1,4 @@
-//Diagrama de estados Mealy (figura 3) 
+// Diagrama de estados Mealy (figura 3) - Código original con salida activa en alto
 module ejercicio_10(
 	input  ix,
 	input  iCLK,
@@ -8,15 +8,15 @@ module ejercicio_10(
 	reg [1:0] Prstate, Nxtstate; 
 	parameter S0 = 2'b00, S1 = 2'b01, S2 = 2'b10, S3 = 2'b11; 
 
-	//Restablece el circuito al estado inicial S0=00 (sincrónico con reloj) 
+	// Restablece el circuito al estado inicial S0=00 (sincrónico con reloj) 
 	always @ (posedge iCLK or negedge iRST) begin
 		if (~iRST) 
-			Prstate <= S0;		//Iniciar en estado S0 (reset) 
+			Prstate <= S0;		// Iniciar en estado S0 (reset) 
 		else 
-			Prstate <= Nxtstate;		//Actualizar estado 
+			Prstate <= Nxtstate;		// Actualizar estado 
 	end
 
-	//Determinar el siguiente estado 
+	// Determinar el siguiente estado 
 	always @ (*) begin
 		case (Prstate) 
 			S0:	if (ix) Nxtstate = S1; else Nxtstate = S0; 
@@ -27,13 +27,13 @@ module ejercicio_10(
 		endcase 
 	end
 
-	//Evaluar la salida 
+	// Evaluar la salida (Activa en alto: 1 = Encendido, 0 = Apagado) 
 	always @ (*) begin
 		case (Prstate) 
-			S0: oy = 1'b0; 
-			S1:	if (ix) oy = 1'b0; else oy = 1'b1; 
-			S2:	if (ix) oy = 1'b0; else oy = 1'b1; 
-			S3:	if (ix) oy = 1'b0; else oy = 1'b1; 
+			S0: oy = 1'b1; 
+			S1:	if (ix) oy = 1'b1; else oy = 1'b0; 
+			S2:	if (ix) oy = 1'b1; else oy = 1'b0; 
+			S3:	if (ix) oy = 1'b1; else oy = 1'b0; 
 			default: oy = 1'b0;
 		endcase 
 	end
