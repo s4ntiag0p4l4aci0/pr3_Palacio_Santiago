@@ -1,174 +1,137 @@
 module ejercicio_15( 
-	//Entradas 
-	input CLK, 
-	input RST, 
-	//Salidas 
-	output E, 
-	output reg RS, 
-	output RW, 
-	output reg INIlisto, 
-	output reg [7:0] DATOS 
-	); 
+    input wire CLK, 
+    input wire RST,         // Reset activo en alto (1 = reinicia, 0 = opera)
+    output reg E, 
+    output reg RS, 
+    output wire RW, 
+    output reg INIlisto, 
+    output reg [7:0] DATOS 
+); 
  
-/*Declaración de señales internas e inicialización, donde se definen los 	nombres de estados y se les asigna un número (codificación)*/ 
-	parameter Espera_20ms = 4'b0000; 
-	parameter Enviar_SetFunction = 4'b0001; 
-	parameter Envia_EntryModeSet = 4'b0010; 
-	parameter Enviar_DisplayControl = 4'b0011; 
-	parameter Envia_DisplayClear = 4'b0100; 
-	parameter Envia_Direccion = 4'b0101; 
-	parameter Envia_Caracter = 4'b0110; 
-	parameter Caracter1 = 4'b0111; 
-	parameter Caracter2 = 4'b1000; 
-	parameter Caracter3 = 4'b1001; 
-	parameter Caracter4 = 4'b1010; 
-	parameter Termina_Aqui = 4'b1011; 
-		 
-	reg [3:0] estado; 
-	reg [13:0] contador; 
-	reg [4:0] cuentas; 
-	reg en_fsm; 
-	wire clk_e; 
-	wire nrst = ~RST; 
- 
-	assign RW = 1'b0;					//Modo del display: ESCRITURA 
- 
-	//Señal de reloj para E 
-	always @ (posedge CLK or posedge nrst) begin 
-			if(nrst) 
-				contador <= 0; 
-			else if(contador == 5000) 
-				contador <= 0; 
-			else 
-				contador <= contador + 1; 
-	end 
- 
-	assign clk_e = (contador >= 0 && contador < 2500); 
-	assign E = en_fsm ? (clk_e & en_fsm) : en_fsm; 
- 
-	//Máquina de estados (FSM) 
-	always @ (posedge clk_e or posedge nrst) 
-	begin 
-			if(nrst) 						//Si se da un RST 
-					begin 
-					INIlisto = 1'b0; 		  	  //se activa ‘listo’ 
-					RS = 1'b0; 			      	  //INSTRUCCIÓN DE CONTROL 
-					en_fsm <= 1'b1; 		  	  //se activa la bandera ‘listo’ (LED) 
-					DATOS = 8'b00000000; 	    //se limpia ‘DATOS’ 
-					estado <= Espera_20ms; 		//se define el estado inicial 
-					 			 end			 		//(estado = 0000) 
-			else						//Sino ejecutar FSM 
-						begin 
-						case(estado) 
-								Espera_20ms : 		//PRIMER ESTADO (estado=0000) 
-								begin 
-										INIlisto = 1'b0;    	//se desactiva la bandera ‘listo’(LED) 
-										RS = 1'b0; 	    	   //INSTRUCCIÓN DE CONTROL 
-										en_fsm <= 1'b1;	     //se activa la bandera ‘en_fsm’ 
-										DATOS = 8'b00000000; //se limpia ‘DATOS’ 
-										if(cuentas < 31) 	   //se genera temporización 
-												begin 
-												cuentas <= cuentas+1; 
-												estado <= Espera_20ms; 
-												end 
-										else 
-												begin 
-												cuentas <= 0; 
-												estado <= Enviar_SetFunction; 
-												end 
-									end 
-									Enviar_SetFunction : 	//SEGUNDO ESTADO 
-									begin		 		//(estado=0001) 
-												INIlisto = 1'b0;	//se desactiva bandera ‘listo’(LED) 
-												RS = 1'b0;	    	//INSTRUCCIÓN DE CONTROL 
-												en_fsm <= 1'b1;  	//se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b0011_1000; //38H 
-												estado <= Envia_EntryModeSet; 
-									end 
-									Envia_EntryModeSet :	//TERCER ESTADO 
-									begin				//(estado=0010) 
-												INIlisto = 1'b0;	    //se desactiva la bandera ‘listo’ (LED) 
-												RS = 1'b0;		        //INSTRUCCIÓN DE CONTROL 
-												en_fsm <= 1'b1;	      //se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b0000_0110; //06H 
-												estado <= Enviar_DisplayControl; 
-									end 
-									Enviar_DisplayControl:	//CUARTO ESTADO 
-									begin 
-												INIlisto = 1'b0;	//se desactiva la bandera ‘listo’ (LED) 
-												RS = 1'b0;	    	//INSTRUCCIÓN DE CONTROL 
-												en_fsm <= 1'b1;  	//se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b0000_1110; //0EH 
-												estado <= Envia_DisplayClear; 
-									end 
-									Envia_DisplayClear :	//QUINTO ESTADO 
-									begin 
-												INIlisto = 1'b0;	//se desactiva la bandera ‘listo’ (LED) 
-												RS = 1'b0;	    	//INSTRUCCIÓN DE CONTROL 
-												en_fsm <= 1'b1;	  //se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b00000001; //01H 
-												estado <= Envia_Direccion; 
-									end 
-									Envia_Direccion :		//SEXTO ESTADO 
-									begin 
-												INIlisto = 1'b0; 	//se desactiva la bandera ‘listo’ (LED) 
-												RS = 1'b0; 	    	//INSTRUCCIÓN DE CONTROL 
-												en_fsm <= 1'b1; 	//se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b10000000; //10H 
-												estado <= Envia_Caracter; 
-									end 
-									Envia_Caracter :		//SÉPTIMO ESTADO 
-									begin 
-												INIlisto = 1'b1; 	//se activa la bandera ‘listo’ (LED) 
-												RS = 1'b1; 		    //MOSTRAR DATOS 
-												en_fsm <= 1'b1; 	//se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b0010000; 
-												estado <= Caracter1; 
-									end 
-									Caracter1 :			//OCTAVO ESTADO 
-									begin 
-												INIlisto = 1'b1; 	//se activa la bandera ‘listo’ (LED) 
-												RS = 1'b1; 	    	//MOSTRAR DATOS 
-												en_fsm <= 1'b1; 	//se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b0100_1000; //Carácter H 
-												estado <= Caracter2; 
-									end 
-									Caracter2 :			//NOVENO ESTADO 
-									begin 
-												INIlisto = 1'b1; 	    //se activa la bandera ‘listo’ (LED) 
-												RS = 1'b1; 	        	//MOSTRAR DATOS 
-												en_fsm <= 1'b1; 	    //se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b0100_1111; //Carácter O 
-												estado <= Caracter3; 
-									end 
-									Caracter3 :			//DÉCIMO ESTADO 
-									begin 
-												INIlisto = 1'b1; 	    //se activa la bandera ‘listo’ (LED) 
-												RS = 1'b1; 		        //MOSTRAR DATOS 
-												en_fsm <= 1'b1;     	//se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b0100_1100; //Carácter L 
-												estado <= Caracter4;  
-									end 
-									Caracter4 :	       		//UNDÉCIMO ESTADO 
-									begin 
-												INIlisto = 1'b1; 	    //se activa la bandera ‘listo’ (LED) 
-												RS = 1'b1; 		        //MOSTRAR DATOS 
-												en_fsm <= 1'b1; 	    //se activa la bandera ‘en_fsm’ 
-												DATOS = 8'b0100_0001; //Carácter A 
-												estado <= Termina_Aqui; 
-									end 
-									Termina_Aqui :		      //DÉCIMO SEGUNDO ESTADO 
-									begin 
-												INIlisto = 1'b1; 	//se activa la bandera ‘listo’ (LED) 
-												RS = 1'b0; 	      //INSTRUCCIÓN DE CONTROL 
-												en_fsm <= 1'b0; 	//se apaga la bandera ‘en_fsm’ 
-												                  //fin de tarea 
-												DATOS = 8'b00000000;  
-												estado <= Termina_Aqui; 
-									end 
-									default: 
-												estado <= Espera_20ms; 
-			endcase 
-		end 
-	end 
+    parameter Espera_20ms          = 4'd0; 
+    parameter Enviar_SetFunction   = 4'd1; 
+    parameter Envia_EntryModeSet   = 4'd2; 
+    parameter Enviar_DisplayControl= 4'd3; 
+    parameter Envia_DisplayClear   = 4'd4; 
+    parameter Envia_Direccion      = 4'd5; 
+    parameter Caracter1            = 4'd6; // H
+    parameter Caracter2            = 4'd7; // o
+    parameter Caracter3            = 4'd8; // l
+    parameter Caracter4            = 4'd9; // a
+    parameter Termina_Aqui         = 4'd10; 
+         
+    reg [3:0] estado; 
+    reg [2:0] cuentas;  
+
+    assign RW = 1'b0;                    
+
+    always @ (posedge CLK or posedge RST) begin 
+        if (RST) begin 
+            INIlisto <= 1'b0;           
+            RS       <= 1'b0;                 
+            E        <= 1'b0;           
+            DATOS    <= 8'h00;       
+            cuentas  <= 3'd0;           
+            estado   <= Espera_20ms;         
+        end else begin                        
+            case (estado) 
+                Espera_20ms: begin 
+                    INIlisto <= 1'b0;       
+                    RS       <= 1'b0;         
+                    E        <= ~E;     
+                    DATOS    <= 8'h00; 
+                    if (cuentas < 3) begin 
+                        cuentas <= cuentas + 1; 
+                        estado  <= Espera_20ms; 
+                    end else begin 
+                        cuentas <= 3'd0; 
+                        estado  <= Enviar_SetFunction; 
+                    end 
+                end 
+
+                Enviar_SetFunction: begin         
+                    INIlisto <= 1'b0;    
+                    RS       <= 1'b0;        
+                    E        <= ~E;    
+                    DATOS    <= 8'h38; // Function Set
+                    estado   <= Envia_EntryModeSet; 
+                end 
+
+                Envia_EntryModeSet: begin                
+                    INIlisto <= 1'b0;        
+                    RS       <= 1'b0;                
+                    E        <= ~E;      
+                    DATOS    <= 8'h06; // Entry Mode Set
+                    estado   <= Enviar_DisplayControl; 
+                end 
+
+                Enviar_DisplayControl: begin 
+                    INIlisto <= 1'b0;    
+                    RS       <= 1'b0;        
+                    E        <= ~E;    
+                    DATOS    <= 8'h0E; // Display On
+                    estado   <= Envia_DisplayClear; 
+                end 
+
+                Envia_DisplayClear: begin 
+                    INIlisto <= 1'b0;    
+                    RS       <= 1'b0;        
+                    E        <= ~E;    
+                    DATOS    <= 8'h01; // Clear Display
+                    estado   <= Envia_Direccion; 
+                end 
+
+                Envia_Direccion: begin 
+                    INIlisto <= 1'b0;     
+                    RS       <= 1'b0;        
+                    E        <= ~E;    
+                    DATOS    <= 8'h80; // DDRAM Address
+                    estado   <= Caracter1; 
+                end 
+
+                Caracter1: begin            
+                    INIlisto <= 1'b1;     
+                    RS       <= 1'b1;        
+                    E        <= ~E;    
+                    DATOS    <= 8'h48; // 'H'
+                    estado   <= Caracter2; 
+                end 
+
+                Caracter2: begin            
+                    INIlisto <= 1'b1;         
+                    RS       <= 1'b1;            
+                    E        <= ~E;    
+                    DATOS    <= 8'h4F; // 'o'
+                    estado   <= Caracter3; 
+                end 
+
+                Caracter3: begin            
+                    INIlisto <= 1'b1;         
+                    RS       <= 1'b1;            
+                    E        <= ~E;    
+                    DATOS    <= 8'h4C; // 'l'
+                    estado   <= Caracter4;  
+                end 
+
+                Caracter4: begin                 
+                    INIlisto <= 1'b1;         
+                    RS       <= 1'b1;            
+                    E        <= ~E;    
+                    DATOS    <= 8'h41; // 'a'
+                    estado   <= Termina_Aqui; 
+                end 
+
+                Termina_Aqui: begin              
+                    INIlisto <= 1'b1;     
+                    RS       <= 1'b0;          
+                    E        <= 1'b0;    
+                    DATOS    <= 8'h00;  
+                    estado   <= Termina_Aqui; 
+                end 
+
+                default: 
+                    estado <= Espera_20ms; 
+            endcase 
+        end 
+    end 
 endmodule
