@@ -5,20 +5,20 @@ cModel Technology
 Z0 dC:\altera\13.1
 vejercicio_15
 !i10b 1
-!s100 4C@=_]F44OH:>:DecLjiS1
-IDG8zMFST7`OfL^?fFUjMb3
-V=P5KNYUi3;MfJ:3<H9`6^0
-Z1 dC:\practica_3\pr3_Palacio_Santiago\ejercicio_15 - copia
-w1794288902
-8C:/practica_3/pr3_Palacio_Santiago/ejercicio_15 - copia/ejercicio_15.v
-FC:/practica_3/pr3_Palacio_Santiago/ejercicio_15 - copia/ejercicio_15.v
+!s100 0VDXCQUf1Mgo^n3?mo9PA2
+Io144hK>JaM7VRG`gLbj@71
+Z1 V=P5KNYUi3;MfJ:3<H9`6^0
+dC:\practica_3\pr3_Palacio_Santiago\TRABAJO_FINAL
+Z2 w1794288902
+8C:/practica_3/pr3_Palacio_Santiago/TRABAJO_FINAL/ejercicio_15.v
+FC:/practica_3/pr3_Palacio_Santiago/TRABAJO_FINAL/ejercicio_15.v
 L0 1
-Z2 OV;L;10.1d;51
+Z3 OV;L;10.1d;51
 r1
 !s85 0
 31
-!s108 1794289243.124000
-!s107 C:/practica_3/pr3_Palacio_Santiago/ejercicio_15 - copia/ejercicio_15.v|
-!s90 -reportprogress|300|-work|work|C:/practica_3/pr3_Palacio_Santiago/ejercicio_15 - copia/ejercicio_15.v|
+!s108 1794346353.280000
+!s107 C:/practica_3/pr3_Palacio_Santiago/TRABAJO_FINAL/ejercicio_15.v|
+!s90 -reportprogress|300|-work|work|C:/practica_3/pr3_Palacio_Santiago/TRABAJO_FINAL/ejercicio_15.v|
 !s101 -O0
-Z3 o-work work -O0
+Z4 o-work work -O0

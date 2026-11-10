@@ -60,4 +60,8 @@
 
 ### Ejercicio 15
 
-- Se presenta en conjunto con el trabajo final el dia martes 10 de noviembre
+- Sustentado en clase
+
+### TRABAJO FINAL
+
+- Sustentado en clase
